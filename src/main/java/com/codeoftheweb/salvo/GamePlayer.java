@@ -22,6 +22,10 @@ public class GamePlayer {
     @JoinColumn(name = "game_id")
     public Game game;
 
+    @ManyToOne
+    @JoinColumn(name = "ship_id")
+    public Ship ship;
+
     public GamePlayer() {}
 
     public GamePlayer(LocalDateTime localDate, Game game, Player player){
@@ -61,6 +65,14 @@ public class GamePlayer {
 
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
     }
 }
 
